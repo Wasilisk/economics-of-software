@@ -1,8 +1,16 @@
+import { Routing } from "pages";
+import { Layout } from "shared/ui/layout";
+import { Header } from "widgets/header/ui";
 
-const App = () => {
-  return (
-    <></>
-  );
-}
+import { withProviders } from "./providers";
 
-export default App;
+const App = () => (
+  <Layout>
+    <Header />
+    <Layout.Content>
+      <Routing />
+    </Layout.Content>
+  </Layout>
+)
+
+export default withProviders(App);
