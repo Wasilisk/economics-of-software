@@ -1,0 +1,1 @@
+export { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
