@@ -17,7 +17,6 @@ export const Navigation = () => {
             value={value}
             onChange={handleChange}
         >
-            <Tab component={Link} label="Home" to="/" />
             <Tab component={Link} label="COCOMO" to="/cocomo-calculator" />
         </Tabs>
     )
