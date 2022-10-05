@@ -5,7 +5,40 @@ export const theme = createTheme({
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "#ffffff"
+                    backgroundColor: "#ffffff",
+                    position: "static"
+                }
+            }
+        },
+        MuiAccordion: {
+            defaultProps: {
+                disableGutters: true,
+            },
+            styleOverrides: {
+                root: {
+                    boxShadow: "none",
+                    border: "1px solid #d9d9d9",
+                    backgroundColor: "#fafafa",
+                    borderRadius: "4px",
+
+                    ":before": {
+                        content: "none"
+                    }
+                }
+            }
+        },
+        MuiAccordionDetails: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: "#ffffff",
+                    borderTop: "1px solid #d9d9d9"
+                }
+            }
+        },
+        MuiTableHead: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: "#fafafa",
                 }
             }
         }
