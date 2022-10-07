@@ -11,7 +11,7 @@ import {
     CostDriversInitialValueType
 } from "./types";
 
-export const CocomoContext = createContext<CocomoContextType | any>(null);
+export const CocomoContext = createContext<CocomoContextType | null>(null);
 
 export const CocomoProvider = ({ children }: CocomoProviderProps) => {
     const [costDrivers, setCostDrivers] = useState<CostDriversInitialValueType>({
