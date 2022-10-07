@@ -1,11 +1,20 @@
-import { ChangeCommand } from "features/change-command/ui";
-import { ChangeLinesOfCode } from "features/change-lines-of-code/ui";
+import { CoefficientTable } from "widgets/tables/coefficient/ui";
+import { CostDriversTable } from "widgets/tables/cost-drivers/ui";
+
+import {Result, ChangeCommand, ChangeLinesOfCode, EquestionResult} from "features/cocomo"
 
 import { Box } from "shared/ui/box";
 import { Typography } from "shared/ui/typography";
+import { Divider } from "shared/ui/divider";
+import { Stack } from "shared/ui/stack";
 
-export const CocomoProjectSetting = () => (
-    <Box
+export const CocomoCalculator = () => (
+    <Stack
+        my={4}
+        spacing={4}
+        divider={<Divider />}
+    >
+        <Box
         display="flex"
         flexDirection="row"
         alignItems="center"
@@ -22,4 +31,9 @@ export const CocomoProjectSetting = () => (
             <Typography ml={1}>thousands of lines of code</Typography>
         </Box>
     </Box>
+        <EquestionResult />
+        <CoefficientTable />
+        <Result />
+        <CostDriversTable />
+    </Stack>
 )

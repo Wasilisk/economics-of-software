@@ -4,7 +4,7 @@ import { CocomoContext } from "shared/libs/context/cocomo";
 import { Box } from "shared/ui/box";
 import { Typography } from "shared/ui/typography";
 
-export const CocomoFinalResult = () => {
+export const Result = () => {
     const { modelResults } = useContext(CocomoContext);
     const { laborIntensityInManMonths } = modelResults;
 
