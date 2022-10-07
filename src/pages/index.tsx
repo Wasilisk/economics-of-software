@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { CocomoCalculator } from "./cocomo-calculator/ui";
+import { CocomoCalculator } from "./cocomo-calculator";
 
 export const Routing = () => (
     <Routes>
