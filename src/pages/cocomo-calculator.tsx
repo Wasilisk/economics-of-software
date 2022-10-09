@@ -1,5 +1,7 @@
 
 import { CostDriversTable } from "widgets/tables/cost-drivers/ui";
+import { BasicCoefficientTable } from "widgets/tables/basic-coefficient";
+import { IntermediateCoefficientTable } from "widgets/tables/intermediate-coefficient";
 
 import { Result, ChangeCommand, ChangeLinesOfCode, EquestionResult } from "features/cocomo"
 
@@ -7,8 +9,6 @@ import { Box } from "shared/ui/box";
 import { Typography } from "shared/ui/typography";
 import { Divider } from "shared/ui/divider";
 import { Stack } from "shared/ui/stack";
-import { BasicCoefficientTable } from "widgets/tables/basic-coefficient";
-import { IntermediateCoefficientTable } from "widgets/tables/intermediate-coefficient";
 
 export const CocomoCalculator = () => (
     <Stack
