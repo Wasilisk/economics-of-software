@@ -6,8 +6,8 @@ import { AppBar } from "shared/ui/app-bar";
 import { Toolbar } from "shared/ui/toolbar";
 import { Typography } from "shared/ui/typography";
 
-
 import { LayoutContentProps, LayoutProps } from "./types";
+
 
 
 export const Header = ({leftSide, title}: {leftSide: React.ReactElement, title: string}) => {
@@ -22,6 +22,7 @@ export const Header = ({leftSide, title}: {leftSide: React.ReactElement, title: 
         </AppBar>
     )
 };
+
 
 export const Layout = ({ children }: LayoutProps) => (
     <Box>

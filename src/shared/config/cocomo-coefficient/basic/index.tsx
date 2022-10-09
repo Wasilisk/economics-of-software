@@ -1,8 +1,8 @@
-import { CocomoCoefficients } from "./types";
+import { CocomoBasicCoefficients } from "./types";
 
-export const cocomoCoefficients: CocomoCoefficients = {
+export const cocomoBasicCoefficients: CocomoBasicCoefficients = {
     organic: {
-        a: 3.2,
+        a: 2.4,
         b: 1.05,
         c: 2.5,
         d: 0.38
@@ -14,7 +14,7 @@ export const cocomoCoefficients: CocomoCoefficients = {
         d: 0.35
     },
     embedded: {
-        a: 2.8,
+        a: 3.6,
         b: 1.2,
         c: 2.5,
         d: 0.32

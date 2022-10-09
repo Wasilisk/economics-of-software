@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
-import { cocomoCoefficients } from "shared/config/cocomo-coefficient";
+import { cocomoBasicCoefficients } from "shared/config/cocomo-coefficient/basic";
+import { cocomoIntermediateCoefficients } from "shared/config/cocomo-coefficient/intermediate";
 
 import { getMultiplyOfCostDrivers } from "./libs";
 import {
@@ -11,7 +12,7 @@ import {
     CostDriversInitialValueType
 } from "./types";
 
-export const CocomoContext = createContext<CocomoContextType | null>(null);
+export const CocomoContext = createContext<CocomoContextType | any>(null);
 
 export const CocomoProvider = ({ children }: CocomoProviderProps) => {
     const [costDrivers, setCostDrivers] = useState<CostDriversInitialValueType>({
@@ -42,16 +43,15 @@ export const CocomoProvider = ({ children }: CocomoProviderProps) => {
         laborIntensityInManMonths: 0
     })
 
-
-
     useEffect(() => {
-        const { a, b, c, d } = cocomoCoefficients[command]
+        const { a, b, c, d } = cocomoBasicCoefficients[command]
+        const { a: a1, b: b1 } = cocomoIntermediateCoefficients[command]
 
         const laborIntensive = a * (thousandsLinesOfCode ** b);
         const developmentTime = c * (laborIntensive ** d);
         const averageNumberOfPersonnel = laborIntensive / developmentTime;
 
-        const laborIntensityInManMonths = getMultiplyOfCostDrivers(costDrivers) * a * (thousandsLinesOfCode ** b);
+        const laborIntensityInManMonths = getMultiplyOfCostDrivers(costDrivers) * a1 * (thousandsLinesOfCode ** b1);
 
         setModelResult({
             laborIntensive,
