@@ -1,8 +1,8 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "shared/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableRow } from "shared/ui/table";
 import { Typography } from "shared/ui/typography";
-
 import { ExpandMoreIcon } from "shared/ui/icons/expand-more";
+
 import { cocomoIntermediateCoefficients } from "shared/config/cocomo-coefficient/intermediate";
 
 export const IntermediateCoefficientTable = () => (
