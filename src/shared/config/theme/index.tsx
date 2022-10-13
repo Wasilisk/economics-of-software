@@ -35,10 +35,10 @@ export const theme = createTheme({
                 }
             }
         },
-        MuiTableHead: {
+        MuiTab: {
             styleOverrides: {
                 root: {
-                    backgroundColor: "#fafafa",
+                    minWidth: "120px"
                 }
             }
         }
