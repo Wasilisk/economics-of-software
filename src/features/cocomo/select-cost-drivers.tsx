@@ -1,18 +1,20 @@
 import { useContext } from "react"
 
-import { CostDriveType } from "shared/config/cost-drivers/types"
+import { MultipliyerType } from "shared/config/multipliers";
+
 import { CocomoContext } from "shared/libs/context/cocomo"
+
 import { Box } from "shared/ui/box";
 import { FormControlLabel } from "shared/ui/form-control-label";
 import { Radio } from "shared/ui/radio";
 import { RadioGroup } from "shared/ui/radio-group";
 import { Typography } from "shared/ui/typography";
 
-export const SelectCostDrivers = ({ id, name, values }: CostDriveType) => {
-    const {costDrivers, setCostDrivers} = useContext(CocomoContext);
+export const SelectCostDrivers = ({ id, name, values }: MultipliyerType) => {
+    const { costDriversValues, setCostDriversValues } = useContext(CocomoContext);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCostDrivers({...costDrivers, [id]: parseFloat(event.target.value)});
+        setCostDriversValues({ ...costDriversValues, [id]: parseFloat(event.target.value) });
     };
 
     return (
@@ -25,10 +27,10 @@ export const SelectCostDrivers = ({ id, name, values }: CostDriveType) => {
                     row
                     defaultValue={1}
                     onChange={handleChange}
-                    sx={{flex: 1, justifyContent: "space-around"}}
+                    sx={{ flex: 1, justifyContent: "space-around" }}
                 >
                     {
-                        Object.keys(values).map(key=> <FormControlLabel
+                        Object.keys(values).map(key => <FormControlLabel
                             labelPlacement="bottom"
                             value={values[key]}
                             control={<Radio />}

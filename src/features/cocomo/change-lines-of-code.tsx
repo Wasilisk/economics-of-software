@@ -7,7 +7,7 @@ export const ChangeLinesOfCode = () => {
     const { thousandsLinesOfCode, setThousandsLinesOfCode } = useContext(CocomoContext)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setThousandsLinesOfCode(event.target.value);
+        setThousandsLinesOfCode(parseFloat(event.target.value));
     };
 
     return (

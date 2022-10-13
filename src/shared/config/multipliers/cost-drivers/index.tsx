@@ -1,6 +1,6 @@
-import { CostDriveType } from "./types";
+import { MultipliyerType } from "../types";
 
-export const costDrivers: CostDriveType[] = [
+export const costDrivers: MultipliyerType[] = [
     {
         id: "RELY",
         name: "Required Software Reliability",
@@ -10,19 +10,19 @@ export const costDrivers: CostDriveType[] = [
             average: 1,
             high: 1.15,
             very_high: 1.4,
-            critical: 0
+            critical: null
         }
     },
     {
         id: "DATA",
         name: "Size of Application Database",
         values: {
-            very_low: 0,
+            very_low: null,
             low: 0.94,
             average: 1,
             high: 1.08,
             very_high: 1.16,
-            critical: 0
+            critical: null
         }
     },
     {
@@ -41,8 +41,8 @@ export const costDrivers: CostDriveType[] = [
         id: "TIME",
         name: "Run-Time Performance Constraints",
         values: {
-            very_low: 0,
-            low: 0,
+            very_low: null,
+            low: null,
             average: 1,
             high: 1.11,
             very_high: 1.3,
@@ -53,8 +53,8 @@ export const costDrivers: CostDriveType[] = [
         id: "STOR",
         name: "Memory Constraints",
         values: {
-            very_low: 0,
-            low: 0,
+            very_low: null,
+            low: null,
             average: 1,
             high: 1.06,
             very_high: 1.21,
@@ -65,24 +65,24 @@ export const costDrivers: CostDriveType[] = [
         id: "VIRT",
         name: "Volatility of the Virtual Machine Environment",
         values: {
-            very_low: 0,
+            very_low: null,
             low: 0.87,
             average: 1,
             high: 1.15,
             very_high: 1.3,
-            critical: 0
+            critical: null
         }
     },
     {
         id: "TURN",
         name: "Required Turnabout Time",
         values: {
-            very_low: 0,
+            very_low: null,
             low: 0.87,
             average: 1,
             high: 1.07,
             very_high: 1.15,
-            critical: 0
+            critical: null
         }
     },
     {
@@ -94,7 +94,7 @@ export const costDrivers: CostDriveType[] = [
             average: 1,
             high: 0.86,
             very_high: 0.71,
-            critical: 0
+            critical: null
         }
     },
     {
@@ -106,7 +106,7 @@ export const costDrivers: CostDriveType[] = [
             average: 1,
             high: 0.86,
             very_high: 0.7,
-            critical: 0
+            critical: null
         }
     },
     {
@@ -118,7 +118,7 @@ export const costDrivers: CostDriveType[] = [
             average: 1,
             high: 0.91,
             very_high: 0.82,
-            critical: 0
+            critical: null
         }
     },
     {
@@ -129,8 +129,8 @@ export const costDrivers: CostDriveType[] = [
             low: 1.1,
             average: 1,
             high: 0.9,
-            very_high: 0,
-            critical: 0
+            very_high: null,
+            critical: null
         }
     },
     {
@@ -141,8 +141,8 @@ export const costDrivers: CostDriveType[] = [
             low: 1.07,
             average: 1,
             high: 0.95,
-            very_high: 0,
-            critical: 0
+            very_high: null,
+            critical: null
         }
     },
     {
@@ -154,7 +154,7 @@ export const costDrivers: CostDriveType[] = [
             average: 1,
             high: 0.91,
             very_high: 0.83,
-            critical: 0
+            critical: null
         }
     },
     {
@@ -166,7 +166,7 @@ export const costDrivers: CostDriveType[] = [
             average: 1,
             high: 0.91,
             very_high: 0.82,
-            critical: 0
+            critical: null
         }
     },
     {
@@ -178,7 +178,7 @@ export const costDrivers: CostDriveType[] = [
             average: 1,
             high: 1.04,
             very_high: 1.1,
-            critical: 0
+            critical: null
         }
     },
 ]

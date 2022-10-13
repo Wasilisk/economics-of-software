@@ -3,19 +3,19 @@ import { createContext, useEffect, useState } from "react";
 import { cocomoBasicCoefficients } from "shared/config/cocomo-coefficient/basic";
 import { cocomoIntermediateCoefficients } from "shared/config/cocomo-coefficient/intermediate";
 
-import { getMultiplyOfCostDrivers } from "./libs";
+import { getProductOfMultipliers } from "../libs";
+import { ContextMultiplierValuesType } from "../types";
 import {
     CocomoCommandType,
     CocomoContextType,
     CocomoModelResultType,
     CocomoProviderProps,
-    CostDriversInitialValueType
 } from "./types";
 
-export const CocomoContext = createContext<CocomoContextType | any>(null);
+export const CocomoContext = createContext({} as CocomoContextType);
 
 export const CocomoProvider = ({ children }: CocomoProviderProps) => {
-    const [costDrivers, setCostDrivers] = useState<CostDriversInitialValueType>({
+    const [costDriversValues, setCostDriversValues] = useState<ContextMultiplierValuesType>({
         "RELY": 1,
         "DATA": 1,
         "CPLX": 1,
@@ -51,7 +51,7 @@ export const CocomoProvider = ({ children }: CocomoProviderProps) => {
         const developmentTime = c * (laborIntensive ** d);
         const averageNumberOfPersonnel = laborIntensive / developmentTime;
 
-        const laborIntensityInManMonths = getMultiplyOfCostDrivers(costDrivers) * a1 * (thousandsLinesOfCode ** b1);
+        const laborIntensityInManMonths = getProductOfMultipliers(costDriversValues) * a1 * (thousandsLinesOfCode ** b1);
 
         setModelResult({
             laborIntensive,
@@ -60,7 +60,7 @@ export const CocomoProvider = ({ children }: CocomoProviderProps) => {
             laborIntensityInManMonths
         })
 
-    }, [costDrivers, command, thousandsLinesOfCode])
+    }, [costDriversValues, command, thousandsLinesOfCode])
 
     return (
         <CocomoContext.Provider value={{
@@ -68,8 +68,8 @@ export const CocomoProvider = ({ children }: CocomoProviderProps) => {
             setCommand,
             thousandsLinesOfCode,
             setThousandsLinesOfCode,
-            costDrivers,
-            setCostDrivers,
+            costDriversValues,
+            setCostDriversValues,
             modelResults
         }}>
             {children}
