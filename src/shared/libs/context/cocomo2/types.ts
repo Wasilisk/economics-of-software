@@ -18,7 +18,8 @@ export type Cocomo2ContextType = {
 
 export type Cocomo2ModelResultType = {
     laborIntensive: number,
-    projectDuration: number
+    projectDuration: number,
+    personnelCount: number
 }
 
 export type Cocomo2StageType = "early_design" | "post_architecture";

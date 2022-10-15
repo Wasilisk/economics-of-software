@@ -14,7 +14,7 @@ export const calculateLaborIntensive = ({ projectStage, earlyDesignValues, postA
         effortMultipliers = getProductOfMultipliers(postArchitectureValues)
     }
 
-    const e = b + (0.001 * getSumOfTheFactors(scaleFactorValues));
+    const e = b + (0.01 * getSumOfTheFactors(scaleFactorValues));
     const laborIntensive = effortMultipliers * a * (thousandsLinesOfCode ** e);
 
     return laborIntensive;
@@ -33,7 +33,7 @@ export const calculateProjectDuration = ({projectStage, earlyDesignValues, postA
             developmentSchedule = postArchitectureValues["SCED"];
         }
 
-        const e = b + (0.001 * getSumOfTheFactors(scaleFactorValues));
+        const e = b + (0.01 * getSumOfTheFactors(scaleFactorValues));
         const laborIntensive = effortMultipliers * a * (thousandsLinesOfCode ** e);
         const projectDuration = effortMultipliers * c * (laborIntensive ** (d + 0.2 * (e - b)));
 

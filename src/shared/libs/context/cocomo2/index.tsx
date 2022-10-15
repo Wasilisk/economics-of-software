@@ -50,25 +50,33 @@ export const Cocomo2Provider = ({ children }: Cocomo2ProviderProps) => {
 
     const [modelResults, setModelResult] = useState<Cocomo2ModelResultType>({
         laborIntensive: 0,
-        projectDuration: 0
+        projectDuration: 0,
+        personnelCount: 0
     })
 
     useEffect(() => {
+        const laborIntensive = calculateLaborIntensive({
+            projectStage,
+            earlyDesignValues,
+            postArchitectureValues,
+            scaleFactorValues,
+            thousandsLinesOfCode
+        });
+
+        const projectDuration = calculateProjectDuration({
+            projectStage,
+            earlyDesignValues,
+            postArchitectureValues,
+            scaleFactorValues,
+            thousandsLinesOfCode
+        });
+
+        const personnelCount = laborIntensive / projectDuration;
+
         setModelResult({
-            laborIntensive: calculateLaborIntensive({
-                projectStage,
-                earlyDesignValues,
-                postArchitectureValues,
-                scaleFactorValues,
-                thousandsLinesOfCode
-            }),
-            projectDuration: calculateProjectDuration({
-                projectStage,
-                earlyDesignValues,
-                postArchitectureValues,
-                scaleFactorValues,
-                thousandsLinesOfCode
-            })
+            laborIntensive,
+            projectDuration,
+            personnelCount
         })
 
     }, [earlyDesignValues, postArchitectureValues, scaleFactorValues, projectStage, thousandsLinesOfCode])
