@@ -19,6 +19,7 @@ export const Navigation = () => {
         >
             <Tab component={Link} label="COCOMO" to="/cocomo-calculator" />
             <Tab component={Link} label="COCOMO II" to="/cocomo2-calculator" />
+            <Tab component={Link} label="Functional Point" to="/functional-point" />
         </Tabs>
     )
 }

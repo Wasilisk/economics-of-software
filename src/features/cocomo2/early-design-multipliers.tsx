@@ -41,6 +41,7 @@ export const EarlyDesignMultipliers = () => {
                     earlyDesignMultipliers.map((multiplier: MultipliyerType) => <MultiplierRadio
                         key={multiplier.id}
                         onChange={handleChange}
+                        roundFloat={3}
                         defaultValue={earlyDesignValues[multiplier.id]}
                         {...multiplier}
                     />)

@@ -6,7 +6,7 @@ import { Typography } from "shared/ui/typography";
 
 import { MultiplierRadioProps } from "./types";
 
-export const MultiplierRadio = ({ id, name, values, onChange, defaultValue }: MultiplierRadioProps) => {
+export const MultiplierRadio = ({ id, name, values, onChange, defaultValue, additionalComponent, roundFloat }: MultiplierRadioProps) => {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onChange(id, parseFloat(event.target.value));
@@ -18,6 +18,7 @@ export const MultiplierRadio = ({ id, name, values, onChange, defaultValue }: Mu
                 <Typography textAlign="center">{name}</Typography>
             </Box>
             <Box display="flex" width="100%">
+                {additionalComponent}
                 <RadioGroup
                     row
                     defaultValue={1}
@@ -31,7 +32,7 @@ export const MultiplierRadio = ({ id, name, values, onChange, defaultValue }: Mu
                             value={values[key] === null ? "" : values[key]}
                             control={<Radio />}
                             disabled={values[key] === null}
-                            label={values[key] === null ? "-" : values[key]?.toPrecision(3)}
+                            label={values[key] === null ? "-" : values[key]?.toPrecision(roundFloat)}
                             checked={defaultValue === values[key]}
                         />)
                     }

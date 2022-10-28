@@ -39,6 +39,7 @@ export const CostDrivers = () => {
                     costDrivers.map((costDriver: MultipliyerType) => <MultiplierRadio
                         key={costDriver.id}
                         onChange={handleChange}
+                        roundFloat={3}
                         defaultValue={costDriversValues[costDriver.id]}
                         {...costDriver}
                     />)

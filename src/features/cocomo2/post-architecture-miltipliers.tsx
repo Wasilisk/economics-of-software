@@ -1,7 +1,9 @@
 import { useContext } from "react";
 
 import { MultipliyerType, postArchitectureMultipliers } from "shared/config/multipliers";
+
 import { Cocomo2Context } from "shared/libs/context/cocomo2";
+
 import { Box } from "shared/ui/box";
 import { Grid } from "shared/ui/grid";
 import { MultiplierRadio } from "shared/ui/multiplier-radio";
@@ -39,6 +41,7 @@ export const PostArchitectureMultipliers = () => {
                     postArchitectureMultipliers.map((multiplier: MultipliyerType) => <MultiplierRadio
                         key={multiplier.id}
                         onChange={handleChange}
+                        roundFloat={3}
                         defaultValue={postArchitectureValues[multiplier.id]}
                         {...multiplier}
                     />)
